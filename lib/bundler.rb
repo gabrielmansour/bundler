@@ -18,6 +18,9 @@ require "bundler/bundle"
 require "bundler/dependency"
 require "bundler/remote_specification"
 
+# Symbol#to_proc fix for Ruby 1.8.6 and below
+require "facets/symbol/to_proc" unless :symbol.respond_to? :to_proc
+
 module Bundler
   VERSION = "0.7.2"
 
